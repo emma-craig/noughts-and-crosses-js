@@ -13,20 +13,22 @@ let currentPlayer = player1;
 
 const drawBoard = () => {
   boxes.forEach((box, i) => {
-    let styleString = "";
+    let className = "";
     if (i < 3) {
-      styleString += "border-bottom: 3px solid var(--text)";
+      box.className += " bottom-lines";
     }
-    if (i % 3 === 0) {
-      styleString += "border-right: 3px solid var(--text)";
+    if (i % 3 === 0 || i % 3 === 1) {
+      box.className += " right-lines";
     }
+
     if (i % 3 === 2) {
-      styleString += "border-left: 3px solid var(--text)";
+      box.className += " left-lines";
     }
+
     if (i > 5) {
-      styleString += "border-top: 3px solid var(--text)";
+      box.className += " top-lines";
     }
-    box.style = styleString;
+
     box.addEventListener("click", boxClicked);
   });
 };
@@ -47,6 +49,9 @@ const boxClicked = (e) => {
   }
   currentPlayer = currentPlayer === "X" ? "O" : "X";
 };
+
+const restart = () => {};
+
 
 restartBtn.addEventListener("click", restart);
 restart();
