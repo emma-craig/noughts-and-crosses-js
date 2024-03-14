@@ -75,3 +75,20 @@ h1 {
 .bottom-lines {
   border-bottom: 3px solid var(--text);
 }
+#strategy {
+  height: 5vh;
+  width: 50vw;
+}
+
+.player{
+    border: 5px solid white;
+    border-radius: 10%;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 200%;
+    padding: 2px 10px 2px 10px;
+}
+
+.active{
+    background: green;
+}
